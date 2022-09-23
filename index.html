@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="FunOnload()">
+    <div class="allTools">
+        <div id="_1" class="notAvailable">
+            <div id="Bselect">
+                <div id="select" class=""></div>
+                <div id="select_menu" class="" onclick="ShowList('listSelect')">Select
+                    <img style="width: 10px;" src="imgs/icons/list.png" alt="">
+                </div>
+                <ul id="listSelect" style="display: none;">
+                    <li>
+                        0000
+                    </li>
+                    <li>
+                        0000
+                    </li>
+                    <li>
+                        0000
+                    </li>
+                </ul>
+            </div>
+            <div id="EditPage">
+                <div id="crop">
+                    <img id="imgCrop" src="imgs/icons/crop.png">
+                    <span id="spanCrop">Crop</span>
+                </div>
+
+                <div id="resize">
+                    <img id="imgResize" src="imgs/icons/resize.png">
+                    <span id="spanResize">Resize</span>
+                </div>
+
+                <div id="rotate">
+                    <img id="imgRotate" src="imgs/icons/rotate.png">
+                    <span id="spanRotate">Rotate</span>
+                </div>
+            </div>
+        </div>
+        <div id="_2">
+            <div id="DivToolsImgs">
+                <img id="pencil" src="imgs/icons/pencil.png" class="tool">
+                <img id="eraser" src="imgs/icons/eraser.png" class="tool">
+                <img id="paint" src="imgs/icons/paint.png" class="tool">
+                <img id="text" src="imgs/icons/text.png" class=" notAvailable">
+                <img id="pickColor" src="imgs/icons/pick-color.png" class="tool">
+                <img id="search" src="imgs/icons/search.png" class="notAvailable">
+            </div>
+            <div id="divTools">Tools</div>
+        </div>
+
+        <div id="_3">
+            <img id="brush" src="imgs/icons/Brush.png" class="hoverAndPointer tool">
+            <div id="divBrush" onclick="ShowList('listBrushes')" class="hoverAndPointer">Brushes
+                <img style="width: 10px;" src="imgs/icons/list.png" alt="">
+            </div>
+            <ul id="listBrushes" style="display: none;">
+                <li>
+                    0000
+                </li>
+                <li>
+                    0000
+                </li>
+                <li>
+                    0000
+                </li>
+            </ul>
+        </div>
+
+        <div id="Shapes" class="notAvailable">
+            <img class="" id='shape' src="imgs/shapes/01.svg" alt="">
+            <img class="" id='shape' src="imgs/shapes/02.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/03.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/04.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/05.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/06.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/07.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/08.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/09.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/10.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/11.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/12.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/13.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/14.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/15.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/16.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/17.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/18.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/19.png" alt="">
+            <img class="" id='shape' src="imgs/shapes/20.png" alt="">
+        </div>
+        <div id="_5">
+            <div id="Size" onclick="ShowList('SizeRange')" class="hoverAndPointer">
+                <div style="background-color: black; height: 2px; margin-bottom: 5px;"></div>
+                <div style="background-color: black; height: 4px; margin-bottom: 5px;"></div>
+                <div style="background-color: black; height: 6px; margin-bottom: 5px;"></div>
+                <div style="background-color: black; height: 8px; margin-bottom: 5px;"></div>
+                <div style="text-align: center;"> Size <img style="width: 10px;" src="imgs/icons/list.png" alt=""></div>
+            </div>
+            <div style="padding-top: 7px; position: relative; z-index: 999;">
+                <input id="SizeRange" style="display: none;;" step="2" min="5" max="50" type="range" name="">
+            </div>
+        </div>
+
+        <div id="_6">
+            <div id="color1" class="hoverAndPointer">
+                <div id="backColor1" class="Color1VsColor2"></div>
+                <div>Color 1</div>
+            </div>
+            <div id="color2" class="hoverAndPointer">
+                <div id="backColor2" class="Color1VsColor2"></div>
+                <div>Color 2</div>
+            </div>
+            <div id="colors">
+                <div class="colorItem" id="c_1"></div>
+                <div class="colorItem" id="c_2"></div>
+                <div class="colorItem" id="c_3"></div>
+                <div class="colorItem" id="c_4"></div>
+                <div class="colorItem" id="c_5"></div>
+                <div class="colorItem" id="c_6"></div>
+                <div class="colorItem" id="c_7"></div>
+                <div class="colorItem" id="c_8"></div>
+                <div class="colorItem" id="c_9"></div>
+                <div class="colorItem" id="c_10"></div>
+                <div class="colorItem" id="c_11"></div>
+                <div class="colorItem" id="c_12"></div>
+                <div class="colorItem" id="c_13"></div>
+                <div class="colorItem" id="c_14"></div>
+                <div class="colorItem" id="c_15"></div>
+                <div class="colorItem" id="c_16"></div>
+                <div class="colorItem" id="c_17"></div>
+                <div class="colorItem" id="c_18"></div>
+                <div class="colorItem" id="c_19"></div>
+                <div class="colorItem" id="c_20"></div>
+                <div class="colorItem" id="c_21"></div>
+                <div class="colorItem" id="c_22"></div>
+                <div class="colorItem" id="c_23"></div>
+                <div class="colorItem" id="c_24"></div>
+                <div class="colorItem" id="c_25"></div>
+                <div class="colorItem" id="c_26"></div>
+                <div class="colorItem" id="c_27"></div>
+                <div class="colorItem" id="c_28"></div>
+                <div class="colorItem" id="c_29"></div>
+                <div class="colorItem" id="c_30"></div>
+            </div>
+        </div>
+    </div>
+    <div id="mainContent">
+        <canvas id="Canvas" width="2400" height="2000"
+            style=" background-color: white;margin: 5px; box-shadow: 5px 7px 6px 0px #88888878; ">
+        </canvas>
+    </div>
+    <div id="cursor"></div>
+</body>
+
+
+</html>
