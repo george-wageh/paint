@@ -32,6 +32,7 @@ function FunOnload() {
     ctx.fillStyle = "#FFFFFF";
     ctx.fillRect(x, y, Canvas.width, Canvas.height);
     Canvas.addEventListener('mousemove', Draw);
+    Canvas.addEventListener('ontouchmove', Draw);
     Canvas.addEventListener('mousedown', Mousedown);
     document.addEventListener('mouseup', Mouseup);
 
@@ -61,6 +62,7 @@ function FunOnload() {
     document.getElementsByClassName('allTools')[0].addEventListener('mousemove', OutDraw);
     cursor = document.getElementById('cursor')
     cursor.addEventListener('mousemove', Draw);
+    cursor.addEventListener('ontouchmove', Draw);
     cursor.addEventListener('mousedown', Mousedown);
 
 }
