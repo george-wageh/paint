@@ -35,8 +35,7 @@ function FunOnload() {
     Canvas.addEventListener('touchmove', Draw);
     Canvas.addEventListener('mousedown', Mousedown);
     document.addEventListener('mouseup', Mouseup);
-    Canvas.addEventListener('touchstart', Mousedown);
-    document.addEventListener('touchend', Mouseup);
+   
     
     SizeRange.value = 5;
     SizeRange.addEventListener('change', ChangeSize);
@@ -64,9 +63,7 @@ function FunOnload() {
     document.getElementsByClassName('allTools')[0].addEventListener('mousemove', OutDraw);
     cursor = document.getElementById('cursor')
     cursor.addEventListener('mousemove', Draw);
-    cursor.addEventListener('touchmove', Draw);
     cursor.addEventListener('mousedown', Mousedown);
-    cursor.addEventListener('touchstart', Mousedown);
 }
 function ShowList(id_to_display) {
     var element = document.getElementById(id_to_display);
