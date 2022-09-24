@@ -32,7 +32,6 @@ function FunOnload() {
     ctx.fillStyle = "#FFFFFF";
     ctx.fillRect(x, y, Canvas.width, Canvas.height);
     Canvas.addEventListener('mousemove', Draw);
-    Canvas.addEventListener('touchmove', Draw);
     Canvas.addEventListener('mousedown', Mousedown);
     document.addEventListener('mouseup', Mouseup);
    
